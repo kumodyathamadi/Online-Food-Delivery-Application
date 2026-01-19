@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5.3%;
+    padding: 39px 5.3%;
     background: linear-gradient(150deg, #0f172a, #020617);
 }
 
 .navbar .logo{
-    width: max(10%,80px);
+    width: max(12%,110px);
 }
 
 .navbar .profile{
-    width: 40px;
+    width: 70px;
 }

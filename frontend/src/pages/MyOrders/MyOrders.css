@@ -1,0 +1,90 @@
+/* MyOrders.css */
+
+/* General page styling */
+.my-orders {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+  
+  .my-orders h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #e53e3e; /* primary color red */
+  }
+  
+  /* Container for orders */
+  .my-orders .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  /* Individual order card */
+  .my-orders-order {
+    background: #E5E6FF; /* light green default background */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .my-orders-order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image styling */
+  .my-orders-order img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  /* Items list */
+  .my-orders-order p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  
+  /* Status styling */
+  .my-orders-order span {
+    color: #e53e3e; /* primary red */
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  
+  /* Button styling */
+  .my-orders-order button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #e53e3e; /* primary red button */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: center;
+  }
+  
+  /* Button hover animation */
+  .my-orders-order button:hover {
+    background: #00801A; /* darker red on hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .my-orders h2 {
+      font-size: 1.6rem;
+    }
+  }
+  

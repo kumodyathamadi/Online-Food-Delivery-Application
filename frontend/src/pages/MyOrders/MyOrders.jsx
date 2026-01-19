@@ -33,7 +33,8 @@ const MyOrders = () => {
         }
         } catch (err) {
           console.error("Axios error:", err);
-        }
+      }
+      
       };
       
 
@@ -57,7 +58,11 @@ const MyOrders = () => {
                         else{
                             return item.name+" x "+item.quantity+", "
                         }
-                    })}</p>    
+                    })}</p>   
+                    <p>${order.amount}.00</p>
+                    <p>Items: {order.items.length}</p>
+                    <p><span>&#x25cf;</span> <b>{order.status}</b></p>
+                    <button onClick={fetchOrders}>Track Order</button> 
                 </div>
             )
         })}
@@ -68,4 +73,3 @@ const MyOrders = () => {
 
 export default MyOrders
 
-//9:02:57

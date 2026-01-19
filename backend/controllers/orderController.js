@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 //placing user order for frontend
 const placeOrder = async (req,res) =>{
 
-    const frontend_url = "http://localhost:5173";
+    const frontend_url = "http://localhost:5174";
 
     try{
         const newOrder = new orderModel({
@@ -90,7 +90,13 @@ const verifyOrder = async(req,res) =>{
 
 const userorders = async (req,res)=>{
     try{
-        const orders = await orderModel.find({userId:req.body.userId});
+
+         // req.userId comes from authMiddleware
+    if (!req.userId) {
+        return res.status(401).json({ success: false, message: "Not Authorized" });
+      }
+      
+        const orders = await orderModel.find({userId:req.userId});
         res.json({success:true,data:orders})
     }catch(error){
         console.log(error);
@@ -102,5 +108,41 @@ const userorders = async (req,res)=>{
 
 
 
-export {placeOrder, verifyOrder, userorders}
+
+
+
+
+//listing orders for admin panel
+const listOrders = async (req,res) =>{
+    try{
+        const orders = await orderModel.find({});
+        res.json({success:true,data:orders})
+
+    }catch (error){
+        console.log(error);
+        res.json({success:false,message:"error"})
+    }
+}
+
+
+
+// api for updating order status
+
+const updateStatus = async (req, res) => {
+    try {
+      const { orderId, status } = req.body;
+  
+      await orderModel.findByIdAndUpdate(orderId, { status });
+  
+      res.json({ success: true, message: "Status updated!" });
+    } catch (error) {
+      console.log(error);
+      res.json({ success: false, message: "Status not updated!" });
+    }
+  };
+  
+
+
+
+export {placeOrder, verifyOrder, userorders, listOrders, updateStatus}
 
