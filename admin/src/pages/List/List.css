@@ -1,0 +1,131 @@
+/* Root container spacing */
+.list-table-format {
+    display: grid;
+    grid-template-columns: 100px 1.5fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    margin: 8px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Hover effect for rows */
+  .list-table-format:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Header row */
+  .list-table-format.title {
+    background: black;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+  }
+  
+  /* Header text alignment */
+  .list-table-format.title b {
+    font-weight: 600;
+  }
+  
+  /* Image styling */
+  .list-table-format img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  /* Text styling */
+  .list-table-format p {
+    margin: 0;
+    font-size: 15px;
+    color: #374151;
+  }
+  
+  /* Price highlight */
+  .list-table-format p:nth-child(4) {
+    font-weight: 600;
+    color: #16a34a;
+  }
+  
+  /* Delete (X) button style */
+  .list-table-format p:last-child {
+    color: #dc2626;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .list-table-format p:last-child:hover {
+    color: #b91c1c;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .list-table-format {
+      grid-template-columns: 70px 1fr 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 10px;
+    }
+  
+    .list-table-format.title {
+      display: none;
+    }
+  
+    .list-table-format p:nth-child(3),
+    .list-table-format p:nth-child(4),
+    .list-table-format p:last-child {
+      grid-column: span 3;
+      text-align: left;
+    }
+  }
+  /* Remove button */
+.cursor {
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.35);
+  }
+  
+  /* Hover effect */
+  .cursor:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(220, 38, 38, 0.45);
+  }
+  
+  /* Click effect */
+  .cursor:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.4);
+  }
+  
+  /* Disabled state (optional) */
+  .cursor:disabled {
+    background: #fca5a5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  .red-toast {
+    background: #dc2626 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+  }
+    
